@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <!-- <div id="login-page" class="login-container">
+        <div class="login-box">
+            <h2>Welcome to FitTrack</h2>
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Username">
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <button id="login-btn">Login</button>
+        </div>
+    </div> -->
+
+    <!-- Dashboard -->
+    <div id="dashboard-page">
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">FitTrack</div>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html" data-page="dashboard">Dashboard</a></li>
+                            <li><a href="history.html" data-page="history">History</a></li>
+                            <li><a href="login.html" id="logout-btn">Logout</a></li>
+                            <li><a href="profile.html" data-page="profile">Profile</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Main Dashboard -->
+             
+            <div class="dashboard active-page" id="dashboard-content">
+                <!-- BMI Calculator Widget -->
+
+                <div class="widget">
+                    <h3>BMI Calculator</h3>
+                    <div class="bmi-inputs">
+                        <div class="input-group">
+                            <input type="number" id="height" min="0" placeholder="Height (cm)">
+                            <span class="error" id="height-error"></span>
+                        </div>
+                        <div class="input-group">
+                            <input type="number" id="weight" min="0" placeholder="Weight (kg)">
+                            <span class="error" id="weight-error"></span>
+                        </div>
+                    </div>
+                    <button id="calculate-bmi">Calculate BMI</button>
+                    <div class="bmi-result" id="bmi-result"></div>
+                </div>
+
+                <!-- Activity Tracking Widget -->
+                
+                <div class="widget">
+                    <h3>Daily Activity</h3>
+                    <div class="activity-data">
+                        <div class="activity-metric">
+                            <div class="activity-value" id="steps-value">7,543</div>
+                            <div class="activity-label">Steps</div>
+                        </div>
+                        <div class="activity-metric">
+                            <div class="activity-value" id="sleep-value">7h 20m</div>
+                            <div class="activity-label">Sleep</div>
+                        </div>
+                        <div class="activity-metric">
+                            <div class="activity-value" id="calories-value">1,856</div>
+                            <div class="activity-label">Calories</div>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="number" id="add-steps" min = "0" step="1" placeholder="Add steps">
+                        <span class="error" id="steps-error"></span>
+                    </div>
+                    <button id="update-steps">Update Steps</button>
+
+                    <!-- Enhanced Sleep Tracking -->
+                    <h4 style="margin-top: 25px; color: #6e8efb;">Sleep Tracking</h4>
+                    <div class="sleep-inputs">
+                        <div class="input-group">
+                            <input type="number" id="night-sleep" min="0" max="12" step="0.1" placeholder="Night sleep (hours)">
+                            <span class="error" id="night-sleep-error"></span>
+                        </div>
+                        <div class="input-group">
+                            <input type="number" id="noon-nap" min="0" max="5" step="0.1" placeholder="Noon nap (hours)">
+                            <span class="error" id="noon-nap-error"></span>
+                        </div>
+                    </div>
+                    <button id="update-sleep">Update Sleep</button>
+                    <div class="sleep-status" id="sleep-status"></div>
+                </div>
+
+                <!-- Workout Schedule Widget -->
+                <div class="widget">
+                    <h3>Workout Schedule</h3>
+                    <div class="workout-tabs">
+                        <div class="workout-tab active" data-level="beginner">Beginner</div>
+                        <div class="workout-tab" data-level="intermediate">Intermediate</div>
+                        <div class="workout-tab" data-level="expert">Expert</div>
+                    </div>
+                    <div class="workout-content active" id="beginner-workouts">
+                        <div class="workout-day">
+                            <h4>Monday - Full Body</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Body-weight Squats: 3 sets x 10 reps</li>
+                                <li class="workout-exercise">Push-ups: 3 sets x 5 reps</li>
+                                <li class="workout-exercise">Planks: 3 sets x 20 seconds</li>
+                            </ul>
+                        </div>
+                        <div class="workout-day">
+                            <h4>Wednesday - Cardio</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Brisk Walking: 20 minutes</li>
+                                <li class="workout-exercise">Jumping Jacks: 3 sets x 20 reps</li>
+                            </ul>
+                        </div>
+                        <div class="workout-day">
+                            <h4>Friday - Full Body</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Lunges: 3 sets x 8 reps per leg</li>
+                                <li class="workout-exercise">Incline Push-ups: 3 sets x 8 reps</li>
+                                <li class="workout-exercise">Bird-dog: 3 sets x 8 reps per side</li>
+                            </ul>
+                        </div>
+                    </div> 
+                    <div class="workout-content" id="intermediate-workouts">
+                        <div class="workout-day">
+                            <h4>Monday - Upper Body</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Push-ups: 4 sets x 12 reps</li>
+                                <li class="workout-exercise">Dumbbell Rows: 3 sets x 10 reps</li>
+                                <li class="workout-exercise">Shoulder Press: 3 sets x 10 reps</li>
+                            </ul>
+                        </div>
+                        <div class="workout-day">
+                            <h4>Tuesday - Cardio</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Jogging: 25 minutes</li>
+                                <li class="workout-exercise">Jump Rope: 3 sets x 1 minute</li>
+                            </ul>
+                        </div>
+                        <div class="workout-day">
+                            <h4>Thursday - Lower Body</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Squats: 4 sets x 15 reps</li>
+                                <li class="workout-exercise">Lunges: 3 sets x 12 reps per leg</li>
+                                <li class="workout-exercise">Calf Raises: 3 sets x 15 reps</li>
+                            </ul>
+                        </div>
+                        <div class="workout-day">
+                            <h4>Friday - Core</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Planks: 3 sets x 45 seconds</li>
+                                <li class="workout-exercise">Russian Twists: 3 sets x 15 reps</li>
+                                <li class="workout-exercise">Leg Raises: 3 sets x 12 reps</li>
+                            </ul>
+                        </div>
+                    </div>
+<div class="workout-content" id="expert-workouts">
+                        <div class="workout-day">
+                            <h4>Monday - Chest & Triceps</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Bench Press: 4 sets x 8-10 reps</li>
+                                <li class="workout-exercise">Incline Dumbbell Press: 4 sets x 10 reps</li>
+                                <li class="workout-exercise">Tricep Dips: 3 sets x 12 reps</li>
+                                <li class="workout-exercise">Skull Crushers: 3 sets x 10 reps</li>
+                            </ul>
+                        </div>
+                        <div class="workout-day">
+                            <h4>Tuesday - Back & Biceps</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Pull-ups: 4 sets x 8 reps</li>
+                                <li class="workout-exercise">Barbell Rows: 4 sets x 10 reps</li>
+                                <li class="workout-exercise">Bicep Curls: 3 sets x 12 reps</li>
+                                <li class="workout-exercise">Hammer Curls: 3 sets x 10 reps</li>
+                            </ul>
+                        </div>
+                        <div class="workout-day">
+                            <h4>Wednesday - HIIT</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Sprints: 10 rounds of 30 sec sprint, 30 sec rest</li>
+                                <li class="workout-exercise">Burpees: 5 sets x 15 reps</li>
+                                <li class="workout-exercise">Mountain Climbers: 5 sets x 30 seconds</li>
+                            </ul>
+                        </div>
+                        <div class="workout-day">
+                            <h4>Thursday - Shoulders & Abs</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Military Press: 4 sets x 8 reps</li>
+                                <li class="workout-exercise">Lateral Raises: 3 sets x 12 reps</li>
+                                <li class="workout-exercise">Hanging Leg Raises: 3 sets x 12 reps</li>
+                                <li class="workout-exercise">Ab Rollouts: 3 sets x 10 reps</li>
+                            </ul>
+                        </div>
+                        <div class="workout-day">
+                            <h4>Friday - Legs</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Squats: 5 sets x 8 reps</li>
+                                <li class="workout-exercise">Deadlifts: 5 sets x 8 reps</li>
+                                <li class="workout-exercise">Leg Press: 3 sets x 12 reps</li>
+                                <li class="workout-exercise">Calf Raises: 3 sets x 15 reps</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><div class="workout-content" id="expert-workouts">
+                        <div class="workout-day">
+                            <h4>Monday - Chest & Triceps</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Bench Press: 4 sets x 8-10 reps</li>
+                                <li class="workout-exercise">Incline Dumbbell Press: 4 sets x 10 reps</li>
+                                <li class="workout-exercise">Tricep Dips: 3 sets x 12 reps</li>
+                                <li class="workout-exercise">Skull Crushers: 3 sets x 10 reps</li>
+                            </ul>
+                        </div>
+                        <div class="workout-day">
+                            <h4>Tuesday - Back & Biceps</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Pull-ups: 4 sets x 8 reps</li>
+                                <li class="workout-exercise">Barbell Rows: 4 sets x 10 reps</li>
+                                <li class="workout-exercise">Bicep Curls: 3 sets x 12 reps</li>
+                                <li class="workout-exercise">Hammer Curls: 3 sets x 10 reps</li>
+                            </ul>
+                        </div>
+                        <div class="workout-day">
+                            <h4>Wednesday - HIIT</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Sprints: 10 rounds of 30 sec sprint, 30 sec rest</li>
+                                <li class="workout-exercise">Burpees: 5 sets x 15 reps</li>
+                                <li class="workout-exercise">Mountain Climbers: 5 sets x 30 seconds</li>
+                            </ul>
+                        </div>
+                        <div class="workout-day">
+                            <h4>Thursday - Shoulders & Abs</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Military Press: 4 sets x 8 reps</li>
+                                <li class="workout-exercise">Lateral Raises: 3 sets x 12 reps</li>
+                                <li class="workout-exercise">Hanging Leg Raises: 3 sets x 12 reps</li>
+                                <li class="workout-exercise">Ab Rollouts: 3 sets x 10 reps</li>
+                            </ul>
+                        </div>
+                        <div class="workout-day">
+                            <h4>Friday - Legs</h4>
+                            <ul class="workout-exercises">
+                                <li class="workout-exercise">Squats: 5 sets x 8 reps</li>
+                                <li class="workout-exercise">Deadlifts: 5 sets x 8 reps</li>
+                                <li class="workout-exercise">Leg Press: 3 sets x 12 reps</li>
+                                <li class="workout-exercise">Calf Raises: 3 sets x 15 reps</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                    <!-- Workout plans content here -->
+                    <!-- (Omitted for brevity, assume the same content continues here) -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script>
+        // Add this to the top of your existing script.js or inline in index.html
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            if (localStorage.getItem('fitTrackLoggedIn') !== 'true') {
+                // Redirect to login page if not logged in
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Set up the logout button
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    // Clear login data
+                    localStorage.removeItem('fitTrackLoggedIn');
+                    localStorage.removeItem('fitTrackUsername');
+                    // Redirect to login page
+                    window.location.href = 'login.html';
+                });
+            }
+            
+            // Display username if available
+            const username = localStorage.getItem('fitTrackUsername');
+            if (username) {
+                // You could add a username display element in your HTML
+                // const userDisplay = document.getElementById('user-display');
+                // if (userDisplay) {
+                //     userDisplay.textContent = username;
+                // }
+            }
+        });
+        </script> -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!-- history.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitTrack - History</title>
+  <link rel="stylesheet" href="history.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">FitTrack</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="login.html" id="logout-btn">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="history-page hidden" id="history-content">
+        <div class="widget full-width">
+            <h2>Activity History</h2>
+            
+            <!-- Activity History Charts -->
+            <div class="history-section">
+                <h3>Steps History (Past 30 Days)</h3>
+                <div class="chart-container">
+                    <canvas id="steps-history-chart"></canvas>
+                </div>
+            </div>
+            
+            <div class="history-section">
+                <h3>Sleep History (Past 30 Days)</h3>
+                <div class="chart-container">
+                    <canvas id="sleep-history-chart"></canvas>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h3>Calories Burned History (Past 30 Days)</h3>
+                <div class="chart-container">
+                    <canvas id="calories-history-chart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget full-width">
+            <h2>Workout History</h2>
+            <div class="history-section">
+                <div class="workout-history-filter">
+                    <select id="workout-history-month">
+                        <option value="4">April 2025</option>
+                        <option value="3">March 2025</option>
+                        <option value="2">February 2025</option>
+                        <option value="1">January 2025</option>
+                    </select>
+                </div>
+                
+                <table class="workout-history-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Workout Type</th>
+                            <th>Duration</th>
+                            <th>Intensity</th>
+                            <th>Calories</th>
+                        </tr>
+                    </thead>
+                    <tbody id="workout-history-data">
+                        <!-- Workout history will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <!-- History Page Content (Steps, Sleep, Calories, BMI, Workout) -->
+    <!-- COPY history section here exactly from your original HTML -->
+    <!-- ... -->
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script src="history.js"></script> <!-- or separate history.js if needed -->
+</body>
+</html>
